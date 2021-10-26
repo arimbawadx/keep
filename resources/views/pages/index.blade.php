@@ -17,7 +17,7 @@
                   <input type="text" name="title" class="form-control" placeholder="Judul">
                 </div>
                 <div class="form-group">
-                  <textarea required name="description" class="form-control" placeholder="Catatan"></textarea>
+                  <textarea rows="10" style="height:100%;" required name="description" class="form-control" placeholder="Catatan"></textarea>
                 </div>
                 <div>
                   <button type="submit" class="btn btn-warning btn-block">Tambah</button>
@@ -26,15 +26,11 @@
             </div>
           </div>
           @foreach($keep as $k)
-          <div class="card text-white bg-{{$k->card_color}} mb-3 h-50">
+          <div class="card text-white cursor-pointer bg-{{$k->card_color}} mb-3 h-50" data-toggle="modal" data-target="#showDetailModal{{$k->id}}">
             <div class="card-body">
               <h5 class="card-title text-truncate">{{$k->title}}</h5>
               <p class="card-text text-truncate">{{$k->description}}</p>
               <p class="card-text"><small>Ditambahkan {{date_format($k->created_at,"d/M/Y H:i:s")}} @if($k->created_at!=$k->updated_at)<br> Diedit {{date_format($k->updated_at,"d/M/Y H:i:s")}}@endif</small></p>
-              <div class="float-right mb-3">
-                <button type="button" data-toggle="modal" data-target="#showDetailModal{{$k->id}}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></button>
-                <a href="/keep/del/{{$k->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-              </div>
             </div>
           </div>
           <!-- Modal -->
@@ -56,8 +52,13 @@
                     <div class="form-group">
                       <textarea rows="10" style="height:100%;" required name="description" class="form-control">{{$k->description}}</textarea>
                     </div>
-                    <div>
-                      <button type="submit" class="btn btn-{{$k->card_color}} btn-block">Perbaharui</button>
+                    <div class="row justify-content-center">
+                      <div class="col-1">
+                        <a href="/keep/del/{{$k->id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                      </div>
+                      <div class="col-11">
+                        <button type="submit" class="btn btn-{{$k->card_color}} btn-block">Perbaharui</button>
+                      </div>
                     </div>
                   </form>
                 </div>

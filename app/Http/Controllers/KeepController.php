@@ -32,10 +32,10 @@ class KeepController extends Controller
             session()->put('dataLoginUsers', $Users);
             return redirect('/keeps');
         }else{
-           Alert::error('username tidak ada');
-           return redirect('/');
-       }
-   }
+         Alert::error('username tidak ada');
+         return redirect('/');
+     }
+ }
     /**
      * Display a listing of the resource.
      *
@@ -129,4 +129,10 @@ class KeepController extends Controller
         $keep->delete();
         return redirect('/keeps');
     }
+
+    public function logout()
+    {
+      session()->forget('dataLoginUsers');
+      return redirect('/');
+  }
 }

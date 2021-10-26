@@ -23,11 +23,11 @@
                 <div class="card bg-light border-0 shadow rounded-3 my-5">
                   <div class="card-body p-4 p-sm-5">
                     <h4 class="card-title text-center bg-warning rounded">KEEP (CATATAN TERBUKA)</h4>
-                    <h5 class="card-title text-center">Silahkan masukan username</h5>
+                    <!-- <h5 class="card-title text-center">Silahkan masukan username</h5> -->
                     <form action="/login" method="post">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input required autocomplete="off" name="username" type="text" class="form-control" placeholder="User ID">
+                            <input required autocomplete="off" name="username" type="text" class="form-control text-lowercase" placeholder="Masukan User ID">
                         </div>
                         <div class="d-grid">
                             <button class="btn btn-primary btn-block" type="submit">Masuk</button>

@@ -23,4 +23,5 @@ Route::post('/keep/store', [KeepController::class, 'store'])->middleware('Sessio
 Route::get('/keep/{id}', [KeepController::class, 'show'])->middleware('SessionUsers');
 Route::post('/keep/{id}', [KeepController::class, 'update'])->middleware('SessionUsers');
 Route::get('/keep/del/{id}', [KeepController::class, 'destroy'])->middleware('SessionUsers');
+Route::get('/logout', [KeepController::class, 'logout'])->middleware('SessionUsers');
 
