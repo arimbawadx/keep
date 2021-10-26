@@ -17,7 +17,6 @@
     }
     div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: #ffffff url('https://manifest.arimbawadx.com/loader/loader2.gif') no-repeat center center; }
   </style>
-  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="ddc66e05-ee6f-4209-9654-091544cd514b";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
   <title>@yield('title')</title>
 </head>
 <body>
