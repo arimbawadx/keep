@@ -53,10 +53,10 @@
                       <textarea rows="10" style="height:100%;" required name="description" class="form-control">{{$k->description}}</textarea>
                     </div>
                     <div class="row justify-content-center">
-                      <div class="col-1">
+                      <div class="col-2">
                         <a href="/keep/del/{{$k->id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                       </div>
-                      <div class="col-11">
+                      <div class="col-10">
                         <button type="submit" class="btn btn-{{$k->card_color}} btn-block">Perbaharui</button>
                       </div>
                     </div>
